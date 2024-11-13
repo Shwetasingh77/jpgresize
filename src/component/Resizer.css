@@ -1,0 +1,141 @@
+/* Global styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f7f8fa, #e6e9f0);
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px; /* Added padding to reduce website size */
+    margin: 0;
+  }
+  
+  /* Main layout */
+  .resizer-page {
+    display: flex;
+    width: 90%; /* Increased width of the page */
+    max-width: 1200px; /* Set a max width */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 30px; /* Added padding */
+  }
+  
+  /* Sidebar styling */
+  .resizer-sidebar {
+    width: 300px; /* Increased width of sidebar */
+    padding: 20px; /* Reduced padding */
+    background: #4b4f72;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .resizer-sidebar h2, .resizer-sidebar h3 {
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center; /* Centered the heading */
+  }
+  
+  .input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .resizer-sidebar label {
+    font-size: 14px;
+    color: #d0d0e0;
+  }
+  
+  .resizer-sidebar input[type="file"],
+  .resizer-sidebar input[type="number"],
+  .resizer-sidebar input[type="range"] {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background: #3d4073;
+    color: #e3e3f1;
+  }
+  
+  .resize-button, .download-button {
+    padding: 12px;
+    background-color: #ffd460;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+    width: 100%; /* Make buttons full width */
+  }
+  
+  .resize-button:hover, .download-button:hover {
+    background-color: #ffcf30;
+    transform: scale(1.03);
+  }
+  
+  /* Content area styling */
+  .resizer-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .resizer-content h2 {
+    font-size: 24px; /* Increased the font size */
+    margin-bottom: 20px;
+    text-align: center; /* Centered the heading */
+  }
+  
+  .resizer-canvas-container {
+    background: #f9f9fc;
+    padding: 15px; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+  
+  .resizer-canvas {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .resizer-page {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .resizer-sidebar {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .resizer-content {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .resize-button, .download-button {
+      width: 100%;
+    }
+  }
+  

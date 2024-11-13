@@ -1,38 +1,136 @@
-.App {
+/* General container styling */
+.resizer-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
   text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* To help with the effect positioning */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header styling */
+.resizer-container h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center; /* Ensures the heading is centered */
+  font-weight: bold;
+  position: relative;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Adds smooth scaling and color change */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Hover effect for the heading */
+.resizer-container h1:hover {
+  transform: scale(1.1); /* Slightly enlarge the heading */
+  color: #28a745; /* Change the color on hover */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Input group container */
+.input-group {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* Input elements styling */
+input[type="file"], select, input[type="number"] {
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  border: none;
+  padding: 0;
+}
+
+/* Aspect Ratio and Compression Section */
+.aspect-compression-group {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.aspect-compression-group select, 
+.aspect-compression-group input[type="range"] {
+  width: 48%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Custom Size Inputs */
+.custom-size-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.custom-size-inputs label {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+/* Compression value display */
+input[type="range"] {
+  width: 100%;
+}
+
+label span {
+  font-weight: bold;
+  color: #555;
+  margin-left: 8px;
+}
+
+/* Button styling */
+button {
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.resize-button {
+  background-color: #28a745;
+}
+
+.resize-button:hover {
+  background-color: #218838;
+}
+
+/* Canvas styling */
+.resizer-canvas {
+  border: 1px solid #ddd;
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .aspect-compression-group, .custom-size-inputs {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
